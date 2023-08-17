@@ -9,9 +9,11 @@ console.log(`Number of categories: ${liItem.length}`);
 
 liItem.forEach(liItem => {
     const childLiItem = liItem.querySelector('h2');
-    const elementsChildLiItem = 0;
-    console.log(childLiItem.textContent);
-    console.log(elementsChildLiItem);
+    const elementsChildLiItem = childLiItem.nextElementSibling;
+    const el2 = elementsChildLiItem.children;
+
+    console.log(`Category: ${childLiItem.textContent}`);
+    console.log(`Elements: ${el2.length}`);
 });
 
 
