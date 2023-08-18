@@ -31,5 +31,5 @@ images.forEach((img) => {
 
 console.log(imgContainer);
 
-ulGallery.insertAdjacentHTML("afterend", imgContainer);
+ulGallery.insertAdjacentHTML("afterbegin", imgContainer);
 
