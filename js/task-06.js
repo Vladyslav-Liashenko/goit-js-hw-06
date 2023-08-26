@@ -1,8 +1,8 @@
 // Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
 const textInput = document.querySelector("#validation-input");
+const minLength = 6;
 
 textInput.addEventListener("blur", () => {
-    const minLength = 6; 
     if (textInput.value.length < minLength) {
         alert("Текст слишком короткий. Минимальная длина: 6");
     };
@@ -20,16 +20,21 @@ textInput.addEventListener("blur", () => {
 // Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
 const validationInput = document.querySelector("#validation-input");
 
-validationInput.addEventListener("input", () => {
+function classtoggler(classremove, classtoadd) {
+    validationInput.classList.remove(classremove);
+    validationInput.classList.add(classtoadd);
+};
+
+validationInput.addEventListener("blur", () => {
     const inputLength = validationInput.value.length;
-    if (inputLength == 6) {
-        validationInput.classList.remove("invalid");
-        validationInput.classList.add("valid");
+    if (inputLength === minLength) {
+        classtoggler("invalid", "valid");
     } else {
-        validationInput.classList.remove("valid");
-        validationInput.classList.add("invalid");
+        classtoggler("valid", "invalid");
     };
 });
+
+
 
 // #validation-input {
 //   border: 3px solid #bdbdbd;

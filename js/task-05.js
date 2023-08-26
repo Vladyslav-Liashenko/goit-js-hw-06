@@ -7,5 +7,5 @@ const inputActionName = document.querySelector("#name-input");
 const outputActionName = document.querySelector("#name-output");
 
 inputActionName.addEventListener('input', () => {
-    outputActionName.textContent = inputActionName.value || 'Anonymous';
+    outputActionName.textContent = inputActionName.value.trim() || 'Anonymous';
 });
