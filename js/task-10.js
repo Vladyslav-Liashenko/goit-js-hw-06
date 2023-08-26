@@ -26,26 +26,27 @@ const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 const numberInput = document.querySelector("[type='number']");
 const divBoxes = document.querySelector("#boxes");
-const default_width = 30;
-const default_height = 30;
-let width = default_width;
-let height = default_height;
+let arrayOfElements = [];
+const default_size = 30;
+let size = default_size;
 
 function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
     const createDiv = document.createElement("div");
     var color = getRandomHexColor();
     createDiv.style.backgroundColor = color;
-    createDiv.style.width = `${width}px`;
-    createDiv.style.height = `${height}px`;
-    divBoxes.append(createDiv);
-    width += 10;
-    height += 10;
-  }
+    createDiv.style.width = `${size}px`;
+    createDiv.style.height = `${size}px`;
+    arrayOfElements.push(createDiv);
+    size += 10;
+  };
+  divBoxes.append(...arrayOfElements);
+  console.log(arrayOfElements);
 };
 
 createBtn.addEventListener("click", () => {
   const number = parseInt(numberInput.value);
+  arrayOfElements = [];
   createBoxes(number);
 });
 
@@ -53,8 +54,7 @@ destroyBtn.addEventListener("click", () => {
   while (divBoxes.firstChild) {
     divBoxes.removeChild(divBoxes.firstChild);
   };
-  width = default_width;
-  height = default_height;
+  size = default_size;
 });
 
 
