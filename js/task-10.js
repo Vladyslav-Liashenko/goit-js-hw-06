@@ -33,7 +33,6 @@ let height = default_height;
 
 function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
-    console.log(amount);
     const createDiv = document.createElement("div");
     var color = getRandomHexColor();
     createDiv.style.backgroundColor = color;

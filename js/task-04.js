@@ -11,7 +11,6 @@
 // Оновлюй інтерфейс новим значенням змінної counterValue.
 
 let counterValue = document.querySelector("#value");
-console.log(counterValue.textContent);
 
 const plusBtn = document.querySelector('button[data-action="increment"]');
 

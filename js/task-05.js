@@ -5,8 +5,6 @@
 
 const inputActionName = document.querySelector("#name-input");
 const outputActionName = document.querySelector("#name-output");
-console.log(inputActionName.textContent);
-console.log(outputActionName.textContent);
 
 inputActionName.addEventListener('input', () => {
     outputActionName.textContent = inputActionName.value || 'Anonymous';

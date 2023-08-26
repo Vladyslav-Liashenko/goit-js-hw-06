@@ -29,7 +29,5 @@ images.forEach((img) => {
   imgContainer += `<li><img src=${img.url} alt=${img.alt}></img></li>`;
 });
 
-console.log(imgContainer);
-
 ulGallery.insertAdjacentHTML("afterbegin", imgContainer);
 

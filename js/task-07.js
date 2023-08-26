@@ -5,10 +5,8 @@
 // <span id="text">Abracadabra!</span>
 
 const FontSizeConttrol = document.querySelector("#font-size-control");
-console.log(FontSizeConttrol);
 
 const textSpan = document.querySelector("#text");
-console.log(textSpan);
 
 FontSizeConttrol.addEventListener('input', () => {
     const fontSize = FontSizeConttrol.value + 'px';
