@@ -28,11 +28,11 @@ function handleSubmit(event) {
     const email = form.email.value;
     const password = form.password.value;
 
-    if (!email || !password) {
+    if (!email.trim() || !password.trim()) {
         alert("Please fill in all the fields");
         return;
     }
-
-    console.log(`Login: ${email}, Password: ${password}`);
+    const obj = {email,password};
+    console.log(`Login: ${obj.email}, Password: ${obj.password}`);
     form.reset();
 };
